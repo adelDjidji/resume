@@ -1,11 +1,9 @@
 'use client'
-import { GithubFilled, GoogleOutlined, LinkedinFilled } from "@ant-design/icons";
+import { EnvironmentFilled, GithubFilled, GoogleOutlined, LinkedinFilled, MailFilled, PhoneFilled } from "@ant-design/icons";
 import { Button, Layout, Popover, Tooltip } from "antd";
 import TimeLine from "@/app/comp/TimeLine"
-// import Carousel from "react-elastic-carousel";
 import Card from "./comp/Card";
-// import { useRef } from "react";
-// import { useMediaQuery } from "react-responsive";
+import CardSlider from "./comp/CardSlider";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
@@ -13,12 +11,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 
-// const LIMIT_IS_MOBILE = 610;
-
 export default function Home() {
-
-  // const slider = useRef(null)
-  // const isMobile = useMediaQuery({ maxWidth: LIMIT_IS_MOBILE });
 
 
   return (
@@ -81,8 +74,6 @@ export default function Home() {
       loop
       spaceBetween={50}
       slidesPerView={1}
-      // onSlideChange={() => console.log('slide change')}
-      // onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
       <Card
@@ -175,34 +166,9 @@ export default function Home() {
               </SwiperSlide>
     </Swiper>
     
-            {/* <Carousel
-              data-aos="fade-down"
-              ref={slider}
-              className={`slide-show-caroussel`}
-              breakPoints={[{ itemsToShow: 1,itemsToScroll: 1, width:200
-               }]}
-              showArrows={true}
-              pagination={!isMobile}
-              // transitionMs={300}
-              enableSwipe={true}
-            // enableAutoPlay 
-            // autoPlaySpeed={10000}
-            >
-              <div>
-                <Card
-                  content="J’ai eu le plaisir de collaborer avec Adel sur le projet Fneek, et je ne peux que souligner la qualité de son travail. Il a su apporter des solutions efficaces et adaptées tout en respectant les délais. Son expertise technique, couplée à une grande réactivité, a été un atout précieux pour le succès de l’application. Je le recommande vivement pour tout projet de développement !"
-                  authName="Chaker Boughanbouz"
-                  authPic="https://media.licdn.com/dms/image/v2/C5603AQF_OTj_YxNH_w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1541098518473?e=1739404800&v=beta&t=KICS0uDWVOJSekM6_jtTbnsONl8TFWMOCIMFKeuauC0"
-                  authRole="Founder & CEO @ Fneek | Chercheur | Enseignant, France"
-                  source="linkedin"
-                  link="https://www.linkedin.com/in/chakerboughanbouz/"
-                  date="06-2024"
-                />
-              </div>
-              
-            </Carousel> */}
+          
           </section>
-{/*
+
           <section className="portfolio bg-white">
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Portfolio</h1>
             <div className="flex flex-wrap justify-start">
@@ -287,6 +253,7 @@ export default function Home() {
             </div>
 
           </section>
+          {/*
           <section className="certifs bg-gray-100">
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Certificats and honors</h1>
             
@@ -312,19 +279,19 @@ export default function Home() {
 
             </Carousel>
           </section>
-
+*/}
           <footer className="footer-landing block md:flex ">
             <div className="md:w-1/2 w-full block text-white">
-              <h1 className="text-4xl text-center text-white font-bold mb-12">Let's connect!</h1>
+              <h1 className="text-4xl text-center text-white font-bold mb-12">Let&apos;s connect!</h1>
               <div>
                 <div className="py-4 text-lg">
-                  <MailFilled /> djidjik.adel.sp@gmail.com
+                  <MailFilled /> {"  "}djidjik.adel.sp@gmail.com
                 </div>
                 <div className="py-4 text-lg">
                   <PhoneFilled /> (+213) 669 479 443
                 </div>
                 <div className="py-4 text-lg">
-                  <EnvironmentFilled /> 19700 Beni ourtilane, Sétif, Algeria
+                  <EnvironmentFilled /> 35052 Ouled Hedadj, Boumerdas, Algeria
                 </div>
               </div>
 
@@ -335,7 +302,7 @@ export default function Home() {
 
             </div>
 
-          </footer> */}
+          </footer> 
         </div>
       </Layout.Content>
     </div>
