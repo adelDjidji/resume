@@ -1,8 +1,10 @@
 'use client'
 import { GithubFilled, GoogleOutlined, LinkedinFilled } from "@ant-design/icons";
-import { Layout, Tooltip } from "antd";
+import { Button, Layout, Popover, Tooltip } from "antd";
 import TimeLine from "@/app/comp/TimeLine"
 export default function Home() {
+
+  
 
   return (
     <div className="app">
@@ -19,6 +21,10 @@ export default function Home() {
               <h1 className="block text-3xl font-bold uppercase">Adel DJIDJIK</h1>
               <div className="img-me m-auto mt-6 mb-6 w-44 h-44 rounded-full border-4 border-white shadow-md"></div>
               <h1 className="title block text-2xl font-bold uppercase">Software engineer  <br /> fullstack JS developer</h1>
+
+              <Popover content={"testtt"} title="Title">
+                <Button type="primary">Hover me</Button>
+              </Popover>
 
               <p style={{ width: '50%' }} className="text-md m-auto mt-8">Versatile technical professional with hands-on experience delivering creative, strategic software solutions. Expert at designing, coding, and modifying websites from layout to function. Demonstrated success in driving IT project management lifecycle from initiation to closure. In-depth knowledge of web technologies and large-scale web application architecture. Possess solid strengths in full-stack web development, MERN stack, REST API integration, UI / UX, software engineering, and machine learning, and data mining. Exemplary communication and interpersonal skills; ensure ability to build strong relations with key members. Flexible and adaptable, will embrace change and drive productivity in fast-paced, rapidly evolving environments.</p>
               <div className="social mt-10 mb-6">

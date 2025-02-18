@@ -12,21 +12,7 @@ export default function TimeLine() {
     const isMobile = useMediaQuery({ maxWidth: LIMIT_IS_MOBILE });
 
 
-    React.useEffect(() => {
-        // setisMobile(window.innerWidth < LIMIT_IS_MOBILE);
-        // window.addEventListener("resize", updateDimensions.bind(this));
-        // return () => {
-        //     window.removeEventListener("resize", updateDimensions.bind(this));
-        // };
-    });
-
-    // const updateDimensions = () => {
-    //     if (window.innerWidth < LIMIT_IS_MOBILE) {
-    //         setisMobile(true);
-    //     } else {
-    //         setisMobile(false);
-    //     }
-    // }
+   
 
     return <Timeline mode={isMobile ? "left" : "alternate"}>
         <Timeline.Item label={!isMobile && "Now"} dot={<Badge style={{ fontSize: '16px' }} color="#3de6b4" status="processing" text="" />}>
@@ -132,7 +118,7 @@ export default function TimeLine() {
             />
         </Timeline.Item>
         <Timeline.Item label={!isMobile && "Sept 2019"} dot={<StarFilled />}>
-            <p> <b>Graduation!</b>  <br /> MSC software engineering</p>
+           <div className='flex justify-end text-center'> <p> <b>Graduation!</b>  <br /> MSC software engineering</p></div>
         </Timeline.Item>
 
         <Timeline.Item label={!isMobile && "Sept 2018"}>
