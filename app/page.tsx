@@ -1,6 +1,7 @@
 'use client'
 import { EnvironmentFilled, GithubFilled, GoogleOutlined, LinkedinFilled, MailFilled, PhoneFilled } from "@ant-design/icons";
-import { Button, Layout, Popover, Tooltip } from "antd";
+import { Layout, Tooltip } from "antd";
+import Image from 'next/image'
 import TimeLine from "@/app/comp/TimeLine"
 import Card from "./comp/Card";
 import CardSlider from "./comp/CardSlider";
@@ -13,7 +14,44 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function Home() {
 
-
+  const imagesObj = [
+    {
+      src: "/img/certifs/guines.jpg",
+      alt: "guiness world record hadj hackathon saudi arabia 2018"
+    },
+    {
+      src: "/img/certifs/hajjHackathon.jpeg",
+      alt: "hadj hackathon saudi arabia 2018 adel djidjik"
+    },
+    {
+      src: "/img/certifs/770001_SFC_Adel Djidjik.jpg",
+      alt: "scrum fundamentals certfied adel djidjik"
+    },
+    {
+      src: "/img/certifs/datasceince.png",
+      alt: "data science fundamentals adel djidjik"
+    },
+    {
+      src: "/img/certifs/EFSET.png",
+      alt: "english test ef set C2 adel djidjik"
+    },
+    {
+      src: "/img/certifs/itil1.png",
+      alt: "itil formation adel djidjik"
+    },
+    {
+      src: "/img/certifs/itil2.png",
+      alt: "itil formation adel djidjik"
+    },
+    {
+      src: "/img/certifs/itil3.png",
+      alt: "itil formation adel djidjik"
+    },
+    {
+      src: "/img/certifs/webtrainer.png",
+      alt: "web training certificat adel djidjik"
+    },
+  ];
   return (
     <div className="app">
       <Layout.Content>
@@ -29,10 +67,6 @@ export default function Home() {
               <h1 className="block text-3xl font-bold uppercase">Adel DJIDJIK</h1>
               <div className="img-me m-auto mt-6 mb-6 w-44 h-44 rounded-full border-4 border-white shadow-md"></div>
               <h1 className="title block text-2xl font-bold uppercase">Software engineer  <br /> fullstack JS developer</h1>
-
-              <Popover content={"testtt"} title="Title">
-                <Button type="primary">Hover me</Button>
-              </Popover>
 
               <p style={{ width: '50%' }} className="text-md m-auto mt-8">Versatile technical professional with hands-on experience delivering creative, strategic software solutions. Expert at designing, coding, and modifying websites from layout to function. Demonstrated success in driving IT project management lifecycle from initiation to closure. In-depth knowledge of web technologies and large-scale web application architecture. Possess solid strengths in full-stack web development, MERN stack, REST API integration, UI / UX, software engineering, and machine learning, and data mining. Exemplary communication and interpersonal skills; ensure ability to build strong relations with key members. Flexible and adaptable, will embrace change and drive productivity in fast-paced, rapidly evolving environments.</p>
               <div className="social mt-10 mb-6">
@@ -253,33 +287,30 @@ export default function Home() {
             </div>
 
           </section>
-          {/*
+          
           <section className="certifs bg-gray-100">
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Certificats and honors</h1>
             
-            <Carousel
-              data-aos="fade-down"
-              // ref={slider}
-              className={`slide-show-caroussel`}
-              breakPoints={[{ itemsToShow: isMobile ? 1 : 3,itemsToScroll: 1 }]}
-              showArrows={true}
-              pagination={!isMobile}
-              // transitionMs={300}
-              enableSwipe={true}
-            // enableAutoPlay 
-            // autoPlaySpeed={10000}
-            >
-              {
-                imagesObj.map((img,idx) => <item onClick={() => setlightBoxState({ photoIndex: idx,isOpen: true })}>
-                  <img src={img.src} alt={img.alt} />
-                </item>)
+            <Swiper
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+      modules={[Navigation, Pagination, Autoplay]}
+      loop
+      spaceBetween={50}
+      slidesPerView={1}
+    >
+       {
+                imagesObj.map((img,idx) => <SwiperSlide key={idx}>
+                  <Image src={img.src} alt={img.alt} width={700} height={100} />
+                </SwiperSlide>)
               }
 
-
-
-            </Carousel>
+     
+        </Swiper>
+           
           </section>
-*/}
+
           <footer className="footer-landing block md:flex ">
             <div className="md:w-1/2 w-full block text-white">
               <h1 className="text-4xl text-center text-white font-bold mb-12">Let&apos;s connect!</h1>

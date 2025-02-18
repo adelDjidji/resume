@@ -12,17 +12,16 @@ export default function TimeLine() {
     const isMobile = useMediaQuery({ maxWidth: LIMIT_IS_MOBILE });
 
 
-   
-
-    return <Timeline mode={isMobile ? "left" : "alternate"}>
-        <Timeline.Item label={!isMobile && "Now"} dot={<Badge style={{ fontSize: '16px' }} color="#3de6b4" status="processing" text="" />}>
-            <br />
+    const items=[
+        { children: <> <br />
             {isMobile && "Now"}
             <br />
-            <br />
-        </Timeline.Item>
-        <Timeline.Item label={!isMobile && "Sept 2021"}>
-            <Card
+            <br /></>, 
+            label: !isMobile && "Now", 
+            dot: <Badge style={{ fontSize: '16px' }} color="#3de6b4" status="processing" text="" />
+            },
+            { 
+                children: <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li><b>Clevermate</b>:
@@ -57,10 +56,12 @@ export default function TimeLine() {
                 address="Remote, Algeria"
                 period="Since Sept 2021"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
-        <Timeline.Item label={!isMobile && "Oct 2020"}>
-            <Card
+            />, 
+                label: !isMobile && "Sept 2021", 
+                
+            },
+            { 
+                children: <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li>Design the UI/UX wireframes and sketchs.</li>
@@ -75,11 +76,11 @@ export default function TimeLine() {
                 address="Hybrid, Algeria"
                 period="Oct 2020 - Sept 2021"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
-
-        <Timeline.Item label={!isMobile && "April 2020"}>
-            <Card
+            />, 
+                label: !isMobile && "Oct 2020", 
+            },
+            { 
+                children: <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li>Convert Wireframes into React web apps (full responsive and pixel perfect).</li>
@@ -95,10 +96,11 @@ export default function TimeLine() {
                 address="Remote"
                 period="April 2020 - Sept 2021"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
-        <Timeline.Item label={!isMobile && "Dec 2019"}>
-            <Card
+            />, 
+                label: !isMobile && "April 2020", 
+            },
+            { 
+                children:  <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li>Maintain UI and UX of web applications and solutions.</li>
@@ -115,14 +117,17 @@ export default function TimeLine() {
                 address="Remote & Algiers, Algeria"
                 period="Dec 2019 - Oct 2020"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
-        <Timeline.Item label={!isMobile && "Sept 2019"} dot={<StarFilled />}>
-           <div className='flex justify-end text-center'> <p> <b>Graduation!</b>  <br /> MSC software engineering</p></div>
-        </Timeline.Item>
-
-        <Timeline.Item label={!isMobile && "Sept 2018"}>
-            <Card
+            />, 
+                label: !isMobile && "Dec 2019", 
+                
+            },
+            { 
+                children:  <div className='flex justify-end text-center'> <p> <b>Graduation!</b>  <br /> MSC software engineering</p></div>, 
+                label: !isMobile && "Sept 2019", 
+                dot:<StarFilled />
+            },
+            { 
+                children:  <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li>Implement web application for talent management.</li>
@@ -140,10 +145,11 @@ export default function TimeLine() {
                 address="Algiers, Algeria"
                 period="Sept 2018 - Aug 2019"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
-        <Timeline.Item label={!isMobile && "July 2018"}>
-            <Card
+            />, 
+                label: !isMobile && "Sept 2018", 
+            },
+            { 
+                children:    <Card
                 content={<ul>
                     <b>Main Roles:</b>
                     <li> Design the web interfaces, convert PSD designs to HTML.</li>
@@ -157,9 +163,14 @@ export default function TimeLine() {
                 address="Algiers, Algeria"
                 period="July 2018 to Nov 2018"
                 isMobile={isMobile}
-            />
-        </Timeline.Item>
+            />, 
+                label: !isMobile && "July 2018", 
+            },
 
+    ]
+   
 
+    return <Timeline mode={isMobile ? "left" : "alternate"} items={items}>
+       
     </Timeline>
 };
