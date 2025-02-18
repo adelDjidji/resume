@@ -1,12 +1,12 @@
+'use client'
 import { GithubFilled, GoogleOutlined, LinkedinFilled } from "@ant-design/icons";
 import { Layout, Tooltip } from "antd";
 import TimeLine from "@/app/comp/TimeLine"
 export default function Home() {
-  const { Content } = Layout;
 
   return (
     <div className="app">
-      <Content>
+      <Layout.Content>
         <div className="landing-page-container">
           {/* <Particles style={{
             position: 'absolute',
@@ -291,7 +291,7 @@ export default function Home() {
 
           </footer> */}
         </div>
-      </Content>
+      </Layout.Content>
     </div>
   );
 }

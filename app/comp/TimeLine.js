@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { Timeline, Badge } from 'antd';
 import { StarFilled } from '@ant-design/icons';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { EnvironmentFilled } from '@ant-design/icons';
 import { Popover } from 'antd';
-import "../Styles/card.css"
 
 // const img = require("../../public/images/avatar.png")
 export default function Card({ content,companyName,role,companyLogo,link,address,period = "" }) {
