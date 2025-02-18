@@ -2,9 +2,24 @@
 import { GithubFilled, GoogleOutlined, LinkedinFilled } from "@ant-design/icons";
 import { Button, Layout, Popover, Tooltip } from "antd";
 import TimeLine from "@/app/comp/TimeLine"
+// import Carousel from "react-elastic-carousel";
+import Card from "./comp/Card";
+// import { useRef } from "react";
+// import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+
+// const LIMIT_IS_MOBILE = 610;
+
 export default function Home() {
 
-  
+  // const slider = useRef(null)
+  // const isMobile = useMediaQuery({ maxWidth: LIMIT_IS_MOBILE });
+
 
   return (
     <div className="app">
@@ -54,24 +69,23 @@ export default function Home() {
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Work experience</h1>
             <TimeLine />
           </section>
-          {/* <section className="testmonial bg-gray-100">
+           <section className="testmonial bg-gray-100">
 
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Testimonials</h1>
 
-            <Carousel
-              data-aos="fade-down"
-              ref={slider}
-              className={`slide-show-caroussel`}
-              breakPoints={[{ itemsToShow: 1,itemsToScroll: 1 }]}
-              showArrows={true}
-              pagination={!isMobile}
-              // transitionMs={300}
-              enableSwipe={true}
-            // enableAutoPlay 
-            // autoPlaySpeed={10000}
-            >
-              <item>
-                <Card
+            <Swiper
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+      modules={[Navigation, Pagination, Autoplay]}
+      loop
+      spaceBetween={50}
+      slidesPerView={1}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>
+      <Card
                   content="J’ai eu le plaisir de collaborer avec Adel sur le projet Fneek, et je ne peux que souligner la qualité de son travail. Il a su apporter des solutions efficaces et adaptées tout en respectant les délais. Son expertise technique, couplée à une grande réactivité, a été un atout précieux pour le succès de l’application. Je le recommande vivement pour tout projet de développement !"
                   authName="Chaker Boughanbouz"
                   authPic="https://media.licdn.com/dms/image/v2/C5603AQF_OTj_YxNH_w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1541098518473?e=1739404800&v=beta&t=KICS0uDWVOJSekM6_jtTbnsONl8TFWMOCIMFKeuauC0"
@@ -80,8 +94,8 @@ export default function Home() {
                   link="https://www.linkedin.com/in/chakerboughanbouz/"
                   date="06-2024"
                 />
-              </item>
-              <item>
+      </SwiperSlide>
+      <SwiperSlide>
                 <Card
                   content="Adel is a professional with high skills! \n It is incredible how Adel can adapt with the team and the different situations. An ally that got all what one need to build."
                   authName="Niamkey Kouamé"
@@ -91,8 +105,8 @@ export default function Home() {
                   link="https://www.linkedin.com/in/niamkey-kouam%C3%A9/"
                   date="06-2023"
                 />
-              </item>
-              <item>
+              </SwiperSlide>
+              <SwiperSlide>
                 <Card
                   content="Adel is the most trustworthy freelancer. He is responsive, cooperative, good responsibility. I highly recommend Adel and I will give him 6 star rating...:)"
                   authName="Jesen Bak"
@@ -102,8 +116,8 @@ export default function Home() {
                   link="https://www.upwork.com/o/profiles/users/~01dbcd5d17acf61616/"
                   date="09-2020"
                 />
-              </item>
-              <item>
+              </SwiperSlide>
+              <SwiperSlide>
                 <Card
                   content="Adel is friendly and worked hard while he was with us."
                   authName="Nick Esposito"
@@ -113,9 +127,9 @@ export default function Home() {
                   link="https://www.upwork.com/o/profiles/users/~01dbcd5d17acf61616/"
                   date="07-2020"
                 />
-              </item>
+              </SwiperSlide>
 
-              <item>
+              <SwiperSlide>
                 <Card
                   content="Excellent work. The contractor was willing to solve the issue right away. He also did a zoom call and fixed the problem instantly. very impressive and great communication skills. I highly recommend him for all web work."
                   authName="Joseph Gilbert"
@@ -125,8 +139,8 @@ export default function Home() {
                   link="https://www.upwork.com/o/profiles/users/~01dbcd5d17acf61616/"
                   date="03-2021"
                 />
-              </item>
-              <item>
+              </SwiperSlide>
+              <SwiperSlide>
                 <Card
                   content="Adel is a young Engineer with high capabilities and innovative thinking oriented I trained him in project management and he showed an excellent performance in resolving the case studies You will enjoy working with him."
                   authName="Youcef BELOUZ"
@@ -136,8 +150,8 @@ export default function Home() {
                   link="https://www.linkedin.com/in/youcefbelouz/"
                   date="10-2019"
                 />
-              </item>
-              <item>
+              </SwiperSlide>
+              <SwiperSlide>
                 <Card
                   content="I had the chance to work with Adel, a very serious and dynamic person, he brought a great value to the IT team of Unicoorp. I strongly recommend this engineer for your project!"
                   authName="Aghiles DJELLOULI"
@@ -147,8 +161,8 @@ export default function Home() {
                   link="https://www.linkedin.com/in/aghiles-djellouli/"
                   date="10-2018"
                 />
-              </item>
-              <item>
+              </SwiperSlide>
+              <SwiperSlide>
                 <Card
                   content="Adel is among the best people I've met during my academic career, he is a brilliant element, he learns quickly and allows to boost his team with his human and professional qualities. I was his Android trainer to develop an application for an association, we worked together in the preparation of events organized by the clubs: CVE and `Google Developers Group` Algiers. I recommend him for his technical skills, his human and professional qualities."
                   authName="Bouzid MEDJDOUB"
@@ -158,11 +172,37 @@ export default function Home() {
                   link="https://www.linkedin.com/in/bouzid-medjdoub/"
                   date="03-2018"
                 />
-              </item>
-
-            </Carousel>
+              </SwiperSlide>
+    </Swiper>
+    
+            {/* <Carousel
+              data-aos="fade-down"
+              ref={slider}
+              className={`slide-show-caroussel`}
+              breakPoints={[{ itemsToShow: 1,itemsToScroll: 1, width:200
+               }]}
+              showArrows={true}
+              pagination={!isMobile}
+              // transitionMs={300}
+              enableSwipe={true}
+            // enableAutoPlay 
+            // autoPlaySpeed={10000}
+            >
+              <div>
+                <Card
+                  content="J’ai eu le plaisir de collaborer avec Adel sur le projet Fneek, et je ne peux que souligner la qualité de son travail. Il a su apporter des solutions efficaces et adaptées tout en respectant les délais. Son expertise technique, couplée à une grande réactivité, a été un atout précieux pour le succès de l’application. Je le recommande vivement pour tout projet de développement !"
+                  authName="Chaker Boughanbouz"
+                  authPic="https://media.licdn.com/dms/image/v2/C5603AQF_OTj_YxNH_w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1541098518473?e=1739404800&v=beta&t=KICS0uDWVOJSekM6_jtTbnsONl8TFWMOCIMFKeuauC0"
+                  authRole="Founder & CEO @ Fneek | Chercheur | Enseignant, France"
+                  source="linkedin"
+                  link="https://www.linkedin.com/in/chakerboughanbouz/"
+                  date="06-2024"
+                />
+              </div>
+              
+            </Carousel> */}
           </section>
-
+{/*
           <section className="portfolio bg-white">
             <h1 className="text-4xl tex-gray text-center font-bold mb-12">Portfolio</h1>
             <div className="flex flex-wrap justify-start">
