@@ -162,8 +162,8 @@ export default function Home() {
                   />
                 </svg>
                 Coding is not just writing code that runs successfully;<br></br>{" "}
-                it's about creating something meaningful, adding real value to
-                the world. <br></br>It's about <b>critical thinking</b>,{" "}
+                it&apos;s about creating something meaningful, adding real value
+                to the world. <br></br>It&apos;s about <b>critical thinking</b>,{" "}
                 <b>problem-solving</b>, and <b>continuous learning</b>.<br></br>{" "}
                 Coding is an <span>Art</span>. <br></br>Coding is about
                 advancing human life to the next level. <br></br>
