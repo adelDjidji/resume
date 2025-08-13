@@ -590,7 +590,7 @@ body {
 	 min-height: 100vh;
 }
  .landing-page-container .section1 div.img-me {
-	 background-image: url(https://media.licdn.com/dms/image/v2/C4D03AQH-xqh01fySQg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1637762093674?e=1745452800&v=beta&t=qalPjcFZV15pl1eZAWCLe6jWxw6Jd0GA383CxDbLGok);
+	 background-image: url(/img/me.jpeg);
 	 background-size: cover;
 	 background-position: center;
 }
@@ -773,3 +773,21 @@ body {
 }
 
 
+.floating-images img{
+  animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.09);
+  }
+  100% {
+    transform: translateY(0) scale(1); 
+  }
+}
+.quote1, .quote1 *{
+  font-family: "Mozilla Text";
+  line-height: 2;
+}
