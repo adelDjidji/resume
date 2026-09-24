@@ -1,19 +1,41 @@
-import type { Metadata } from "next";
-import { Raleway, Cairo } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const serif = Instrument_Serif({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
 });
-const cairo = Cairo({
-  variable: "--font-cairo",
+const sans = Manrope({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Adel DJIDJIK",
-  description: "Adel Djidjik resume",
+  title: "Adel Djidjik — Software Engineer",
+  description:
+    "Adel Djidjik is a full-stack JavaScript software engineer crafting fast, scalable web and mobile products with React, Next.js and Node.js.",
+  openGraph: {
+    title: "Adel Djidjik — Software Engineer",
+    description:
+      "Full-stack JavaScript engineer crafting fast, scalable web and mobile products.",
+    images: ["/img/me.jpeg"],
+    type: "profile",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#081114",
 };
 
 export default function RootLayout({
@@ -22,20 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap"
-        rel="stylesheet"
-      ></link>
-      <body className={`${raleway.variable} ${cairo.variable} antialiased`}>
-        {children}
-      </body>
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
