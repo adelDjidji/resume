@@ -10,7 +10,7 @@ export default function Projects() {
         <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="eyebrow">Selected work</p>
-            <h2 className="display mt-6 text-5xl text-ink sm:text-6xl">
+            <h2 className="display mt-6 text-4xl text-ink sm:text-5xl">
               Products I&apos;ve <em className="text-gradient">brought to life</em>.
             </h2>
           </div>
@@ -44,7 +44,7 @@ export default function Projects() {
                     )}
                   </div>
                   <div className="mt-5 flex items-baseline justify-between gap-4">
-                    <h3 className="font-serif text-2xl leading-tight text-ink">
+                    <h3 className="font-display text-lg font-bold leading-tight tracking-tight text-ink">
                       {p.name}
                       {p.link && <span className="sr-only"> (opens in a new tab)</span>}
                     </h3>

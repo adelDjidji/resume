@@ -5,11 +5,13 @@ import { ArrowRight, Github, Linkedin, Mail } from "./icons";
 const years = new Date().getFullYear() - 2018;
 const countries = new Set(testimonials.map((t) => t.place)).size;
 
+const pad = (n: number) => String(n).padStart(2, "0");
+
 const stats = [
-  { value: `${years}+`, label: "Years shipping" },
-  { value: String(projects.length), label: "Products delivered" },
-  { value: String(testimonials.length), label: "Client reviews" },
-  { value: String(countries), label: "Countries served" },
+  { value: pad(years), suffix: "+", label: "Years shipping" },
+  { value: pad(projects.length), label: "Products delivered" },
+  { value: pad(testimonials.length), label: "Client reviews" },
+  { value: pad(countries), label: "Countries served" },
 ];
 
 export default function Hero() {
@@ -25,11 +27,14 @@ export default function Hero() {
 
       <div className="container-page grid min-h-[100svh] items-center gap-16 pb-16 pt-32 lg:grid-cols-[1.2fr_0.8fr] lg:pt-28">
         <div>
-          <p className="eyebrow text-white/60">
-            Hi, I am <span aria-hidden>👋</span>
+          <p className="font-mono text-sm text-white/55">
+            <span className="text-mint">adel@dev</span>:<span className="text-aqua">~</span>$ whoami
           </p>
-          <h1 className="display mt-6 text-[clamp(3.6rem,10vw,8.5rem)]">
-            Adel <span className="text-gradient italic">Djidjik</span>
+          <h1 className="display mt-6 text-[clamp(3rem,9vw,6.75rem)]">
+            Adel
+            <br />
+            <span className="text-gradient">Djidjik</span>
+            <span className="cursor" aria-hidden />
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
             <span className="text-white">Software engineer &amp; full-stack JavaScript developer.</span>{" "}
@@ -112,7 +117,12 @@ export default function Hero() {
               className={`py-6 sm:py-8 ${i % 2 ? "pl-6" : ""} sm:pl-8 sm:first:pl-0 ${i ? "sm:border-l sm:border-white/10" : ""} ${i > 1 ? "border-t border-white/10 sm:border-t-0" : ""}`}
             >
               <dt className="font-mono text-[11px] uppercase tracking-eyebrow text-white/45">{s.label}</dt>
-              <dd className="display mt-2 text-5xl text-white">{s.value}</dd>
+              <dd className="mt-3 flex items-start gap-1 text-white">
+                <span className="lcd text-4xl text-mint sm:text-5xl" data-ghost={"8".repeat(s.value.length)}>
+                  {s.value}
+                </span>
+                {s.suffix && <span className="font-mono text-2xl font-bold text-mint">{s.suffix}</span>}
+              </dd>
             </div>
           ))}
         </dl>

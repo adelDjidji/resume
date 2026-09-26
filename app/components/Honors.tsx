@@ -33,7 +33,7 @@ export default function Honors() {
         <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="eyebrow">Certificates &amp; honors</p>
-            <h2 className="display mt-6 text-5xl text-ink sm:text-6xl">
+            <h2 className="display mt-6 text-4xl text-ink sm:text-5xl">
               Recognition along <em className="text-gradient">the way</em>.
             </h2>
           </div>
@@ -71,7 +71,7 @@ export default function Honors() {
                   />
                 </div>
               </div>
-              <p className="mt-4 font-serif text-xl text-ink">{h.title}</p>
+              <p className="mt-4 font-display text-base font-bold tracking-tight text-ink">{h.title}</p>
               <p className="font-mono text-[10.5px] uppercase tracking-wider text-stone-500">{h.caption}</p>
             </button>
           </li>
@@ -95,7 +95,7 @@ export default function Honors() {
               className="max-h-[80vh] w-auto rounded-2xl object-contain shadow-2xl"
             />
             <figcaption className="mt-4 text-center text-white">
-              <span className="font-serif text-2xl">{current.title}</span>
+              <span className="font-display text-xl font-bold tracking-tight">{current.title}</span>
               <span className="ml-3 font-mono text-[11px] uppercase tracking-wider text-white/60">{current.caption}</span>
             </figcaption>
             <button

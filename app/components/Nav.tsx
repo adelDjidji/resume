@@ -33,10 +33,12 @@ export default function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-2.5 pl-2 text-white" aria-label="Adel Djidjik — back to top">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-mint to-aqua font-serif text-lg text-ink">
-            A
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-mint to-aqua font-mono text-[13px] font-extrabold text-ink">
+            &gt;_
           </span>
-          <span className="hidden font-serif text-xl tracking-tight sm:inline">Adel Djidjik</span>
+          <span className="hidden font-mono text-[15px] font-bold tracking-tight sm:inline">
+            adel<span className="text-mint">.</span>djidjik
+          </span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

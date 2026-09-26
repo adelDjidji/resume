@@ -28,7 +28,7 @@ export default function Contact() {
       <div className="container-page py-24 sm:py-32">
         <Reveal>
           <p className="eyebrow text-white/50">Contact</p>
-          <h2 className="display mt-6 max-w-4xl text-[clamp(3rem,8vw,6.5rem)]">
+          <h2 className="display mt-6 max-w-4xl text-[clamp(2.4rem,6vw,4.75rem)]">
             Let&apos;s build something <em className="text-gradient">remarkable</em>.
           </h2>
         </Reveal>

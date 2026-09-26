@@ -33,7 +33,7 @@ export default function Avatar({ name, src, size = 48, className = "", contain =
       {failed ? (
         <span
           aria-hidden
-          className="flex h-full w-full items-center justify-center bg-gradient-to-br from-mint to-aqua font-serif text-ink"
+          className="flex h-full w-full items-center justify-center bg-gradient-to-br from-mint to-aqua font-mono font-bold text-ink"
           style={{ fontSize: size * 0.42 }}
         >
           {initials(name)}

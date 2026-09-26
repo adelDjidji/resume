@@ -10,7 +10,7 @@ function Role({ job, open }: { job: Exp; open: boolean }) {
         <Avatar name={job.company} src={job.logo} size={52} contain className="border border-ink/10 bg-white" />
         <div className="min-w-0 flex-1">
           <p className="font-mono text-[11px] uppercase tracking-wider text-stone-500">{job.period}</p>
-          <h3 className="mt-1 font-serif text-2xl leading-tight text-ink sm:text-[1.7rem]">{job.role}</h3>
+          <h3 className="mt-1 font-display text-xl font-bold leading-tight tracking-tight text-ink sm:text-2xl">{job.role}</h3>
           <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-stone-600">
             <span className="font-semibold text-ink">{job.company}</span>
             <span className="inline-flex items-center gap-1.5">
@@ -61,7 +61,7 @@ export default function Experience() {
       <div className="container-page grid gap-14 lg:grid-cols-[0.75fr_1.6fr]">
         <Reveal className="lg:sticky lg:top-32 lg:self-start">
           <p className="eyebrow">Experience</p>
-          <h2 className="display mt-6 text-5xl text-ink sm:text-6xl">
+          <h2 className="display mt-6 text-4xl text-ink sm:text-5xl">
             A career built on <em className="text-gradient">shipping</em>.
           </h2>
           <p className="mt-6 max-w-sm leading-relaxed text-stone-600">
@@ -80,7 +80,7 @@ export default function Experience() {
                   </span>
                   <div>
                     <p className="font-mono text-[11px] uppercase tracking-wider text-stone-500">{graduation.date} · Graduation</p>
-                    <p className="font-serif text-xl text-ink">{graduation.title}</p>
+                    <p className="font-display text-lg font-bold tracking-tight text-ink">{graduation.title}</p>
                   </div>
                 </Reveal>
               </li>

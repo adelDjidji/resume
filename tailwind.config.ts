@@ -26,9 +26,10 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-mono)", "ui-monospace", "monospace"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        digital: ["var(--font-digital)", "var(--font-mono)", "monospace"],
       },
       maxWidth: {
         page: "76rem",

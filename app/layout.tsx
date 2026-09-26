@@ -1,23 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const serif = Instrument_Serif({
-  variable: "--font-serif",
+// Headings + code-flavoured labels
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "700", "800"],
   style: ["normal", "italic"],
   display: "swap",
 });
-const sans = Manrope({
+// Body copy: technical grotesk that stays readable in long paragraphs
+const sans = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
-const mono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+// Seven-segment LCD digits for numbers (DSEG, SIL OFL 1.1 — see app/fonts/DSEG-LICENSE.txt)
+const digital = localFont({
+  variable: "--font-digital",
+  src: "./fonts/DSEG7Classic-Bold.woff2",
+  weight: "700",
   display: "swap",
 });
 
@@ -44,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${mono.variable} ${sans.variable} ${digital.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );

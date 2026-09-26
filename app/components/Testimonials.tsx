@@ -113,7 +113,7 @@ export default function Testimonials() {
       <div className="container-page">
         <Reveal className="max-w-3xl">
           <p className="eyebrow text-white/50">Client voices</p>
-          <h2 className="display mt-6 text-5xl sm:text-6xl">
+          <h2 className="display mt-6 text-4xl sm:text-5xl">
             Trusted by founders &amp; teams <em className="text-gradient">worldwide</em>.
           </h2>
         </Reveal>
@@ -138,7 +138,7 @@ export default function Testimonials() {
                   <Pin width={12} height={12} className="text-mint" /> {t.place}
                 </span>
               </div>
-              <blockquote className="mt-7 min-h-[9rem] font-serif text-[1.35rem] leading-[1.45] text-white/90 sm:text-[1.6rem]">
+              <blockquote className="mt-7 min-h-[9rem] font-sans text-[1.15rem] leading-[1.6] text-white/90 sm:text-[1.3rem]">
                 {t.quote}
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
@@ -184,8 +184,14 @@ export default function Testimonials() {
                   />
                 </div>
               </div>
-              <span className="font-mono text-xs tabular-nums text-white/50">
-                {String(active + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+              <span className="flex items-baseline gap-2 text-white/40" aria-label={`Review ${active + 1} of ${testimonials.length}`}>
+                <span className="lcd text-lg text-mint" data-ghost="88">
+                  {String(active + 1).padStart(2, "0")}
+                </span>
+                <span className="font-mono text-xs">/</span>
+                <span className="lcd text-sm" data-ghost="88">
+                  {String(testimonials.length).padStart(2, "0")}
+                </span>
               </span>
             </div>
 
@@ -270,7 +276,7 @@ export default function Testimonials() {
                                 <Pin width={12} height={12} /> {t.place}
                               </p>
                               <p className="mt-2 text-sm font-semibold text-white">{t.name}</p>
-                              <p className="mt-1.5 line-clamp-3 font-serif text-[15px] italic leading-snug text-white/75">“{t.quote}”</p>
+                              <p className="mt-1.5 line-clamp-3 font-mono text-[12.5px] leading-relaxed text-white/75">“{t.quote}”</p>
                             </div>
                           )}
                         </div>
