@@ -70,7 +70,7 @@
   .cursor::after {
     content: "";
     display: inline-block;
-    width: 0.55em;
+    width: 0.1em;
     height: 0.9em;
     margin-left: 0.08em;
     vertical-align: -0.05em;

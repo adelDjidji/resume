@@ -18,11 +18,19 @@ export type DragState = {
   lastInteraction: number;
 };
 
+export type ZoomState = {
+  target: number; // target camera z
+  velocity: number;
+  focusLat?: number;
+  focusLng?: number;
+};
+
 type Props = {
   markers: GlobeMarker[];
   home: { lat: number; lng: number };
   focus: { lat: number; lng: number };
   drag: MutableRefObject<DragState>;
+  zoom: MutableRefObject<ZoomState>;
   /** DOM elements (keyed by marker id) pinned to each marker's projected screen position. */
   markerEls: MutableRefObject<Record<string, HTMLElement | null>>;
   active: boolean;
@@ -204,7 +212,11 @@ function HomeBeacon({ lat, lng }: { lat: number; lng: number }) {
   );
 }
 
-function Scene({ markers, home, focus, drag, markerEls }: Omit<Props, "active">) {
+const DEFAULT_ZOOM = 3.7;
+const MIN_ZOOM = 2.4;
+const MAX_ZOOM = 5.5;
+
+function Scene({ markers, home, focus, drag, zoom, markerEls }: Omit<Props, "active">) {
   const globe = useRef<THREE.Group>(null);
   const { gl } = useThree();
   const anchorKey = markers.map((m) => `${m.id}:${m.lat},${m.lng}`).join("|");
@@ -247,7 +259,16 @@ function Scene({ markers, home, focus, drag, markerEls }: Omit<Props, "active">)
     if (!g) return;
     const r = rot.current;
     const d = drag.current;
+    const z = zoom.current;
     const dt = Math.min(delta, 0.05);
+
+    // Smooth zoom interpolation
+    const zoomK = 1 - Math.exp(-dt * 6);
+    camera.position.z += (z.target - camera.position.z) * zoomK;
+    z.velocity *= 0.85;
+
+    // If zooming to a specific location, also rotate to face it
+    const hasZoomFocus = z.focusLat !== undefined && z.focusLng !== undefined;
 
     if (d.dragging) {
       r.vy = d.dx * 0.005;
@@ -255,12 +276,21 @@ function Scene({ markers, home, focus, drag, markerEls }: Omit<Props, "active">)
       r.y += r.vy;
       r.x = THREE.MathUtils.clamp(r.x + r.vx, -1.1, 1.1);
       d.dx = d.dy = 0;
+      // Clear zoom focus when user drags
+      z.focusLat = undefined;
+      z.focusLng = undefined;
     } else if (performance.now() - d.lastInteraction < 2600) {
       // Coast with inertia after the user lets go
       r.vy *= 0.94;
       r.vx *= 0.94;
       r.y += r.vy;
       r.x = THREE.MathUtils.clamp(r.x + r.vx, -1.1, 1.1);
+    } else if (hasZoomFocus) {
+      // Rotate to face the zoom focus point
+      const target = rotationToFace(z.focusLat!, z.focusLng!);
+      const k = 1 - Math.exp(-dt * 3);
+      r.y += shortestAngle(r.y, target.y) * k;
+      r.x += (THREE.MathUtils.clamp(target.x, -1.1, 1.1) - r.x) * k;
     } else {
       // Glide to the focused location (slightly left of centre, gently breathing)
       const target = rotationToFace(focus.lat, focus.lng);
@@ -334,12 +364,14 @@ export default function Globe({ active, ...props }: Props) {
     <Canvas
       frameloop={active ? "always" : "never"}
       dpr={[1, 2]}
-      camera={{ position: [0, 0, 3.7], fov: 38 }}
+      camera={{ position: [0, 0, DEFAULT_ZOOM], fov: 38 }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-      style={{ touchAction: "pan-y" }}
+      style={{ touchAction: "none" }}
     >
       <Halo />
       <Scene {...props} />
     </Canvas>
   );
 }
+
+export { DEFAULT_ZOOM, MIN_ZOOM, MAX_ZOOM };

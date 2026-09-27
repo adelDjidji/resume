@@ -217,6 +217,18 @@ const ALGERIA = { place: "Algeria", lat: 36.7538, lng: 3.0588 };
 export const HOME = { place: "Boumerdès, Algeria", lat: 36.7664, lng: 3.4772 };
 
 export const testimonials: Testimonial[] = [
+   {
+    quote:
+      "J’ai le plaisir de recommander Adel, Lead Dev chez Clevermate depuis plus de deux ans. Très impliqué, orienté solutions, il sait concilier exigences techniques, contraintes opérationnelles et business pour proposer la meilleure voie. Communication claire, esprit d’équipe, sens des priorités : travailler avec lui est fluide et efficace. Je le recommande sans réserve.",
+    name: "Jules Autelin",
+    role: "Co-founder at Clevermate.fr ",
+    avatar:
+      "https://media.licdn.com/dms/image/v2/C5603AQFHMSGf9vYj0g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516763793842?e=1792022400&v=beta&t=qxEWkmcU8W5bJzdDriXHSo_ehKJola2dzU-FDkWaZhk",
+    source: "linkedin",
+    link: "https://www.linkedin.com/in/jules-autelin-23747637/",
+    date: "2025-09",
+    ...FRANCE,
+  },
   {
     quote:
       "J’ai eu le plaisir de collaborer avec Adel sur le projet Fneek, et je ne peux que souligner la qualité de son travail. Il a su apporter des solutions efficaces et adaptées tout en respectant les délais. Son expertise technique, couplée à une grande réactivité, a été un atout précieux pour le succès de l’application. Je le recommande vivement pour tout projet de développement !",

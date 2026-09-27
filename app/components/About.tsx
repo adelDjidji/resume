@@ -3,8 +3,9 @@ import Reveal from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="section relative">
+    <section id="about" className="section relative" aria-labelledby="about-heading">
       <div className="container-page">
+        <h2 id="about-heading" className="sr-only">About Adel Djidjik — Software Engineer Philosophy</h2>
         <Reveal as="figure" className="mx-auto max-w-4xl">
           <blockquote className="font-mono text-[clamp(1.2rem,2.5vw,2rem)] font-medium leading-[1.45] tracking-[-0.02em] text-ink">
             <span aria-hidden className="block text-left text-aqua/70">{"/**"}</span>
