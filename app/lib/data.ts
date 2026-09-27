@@ -7,7 +7,7 @@ export const profile = {
   phoneHref: "+213669479443",
   location: "Ouled Hedadj, Boumerdès, Algeria",
   resumeUrl:
-    "https://docs.google.com/document/d/1scVtph_ctSwPrrbcl394PlHOt3PFzTxO/edit?usp=sharing&ouid=114007002643511804895&rtpof=true&sd=true",
+    "https://docs.google.com/document/d/1o_zQ5F5D2tPDlCqZZpTG01uuSiLL38Ms9dtXpvVvJQc/edit?usp=sharing",
   linkedin: "https://www.linkedin.com/in/adel-djidjik/",
   github: "https://github.com/adelDjidji",
   upwork: "https://www.upwork.com/o/profiles/users/~01dbcd5d17acf61616/",
